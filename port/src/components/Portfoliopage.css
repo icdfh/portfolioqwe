@@ -1,0 +1,374 @@
+body {
+  background-color: #1B1E1C;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-left: 130px;
+}
+
+.card {
+  display: flex;
+  background-color: #272B27;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 20px;
+  position: relative; /* Добавлено для позиционирования иконок */
+}
+
+.leftPanel {
+  background-color: #1B1E1C;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33.33%;
+  padding: 20px;
+}
+
+.leftPanel img {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+.leftPanel h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.leftPanel p {
+  font-size: 0.875rem;
+  color: #ccc;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.leftPanel a.downloadButton {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.leftPanel a.downloadButton:hover {
+  background-color: #555;
+}
+
+.rightPanel {
+  width: 66.66%;
+  padding-left: 20px;
+}
+
+.rightPanel h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.rightPanel p {
+  margin-bottom: 16px;
+}
+
+.languageBar {
+  margin-bottom: 16px;
+}
+
+.languageBar p {
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  background-color: #444;
+  border-radius: 50px;
+  height: 8px;
+  margin-bottom: 8px;
+}
+
+.progress {
+  background-color: #00cc66;
+  border-radius: 50px;
+  height: 100%;
+}
+
+.downloadButton {
+  background-color: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #00b359;
+}
+
+/* Стили для иконок */
+.icon-links {
+  position: absolute;
+  top: 50%;
+  right: -60px; /* Расположение иконок */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon-links a {
+  display: block;
+}
+
+.icon-links img {
+  width: 50px;
+  height: 50px;
+  background-color: #272B27; /* Фоновый цвет */
+  padding: 10px;
+  border-radius: 50%; /* Закругленные края */
+  cursor: pointer;
+}
+
+/* Стили для сетки навыков и карточек */
+.skills-grid, .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+/* Стили для переворачивающихся карточек */
+.flip-card {
+  background-color: transparent;
+  width: 150px; /* Уменьшили ширину */
+  height: 150px; /* Уменьшили высоту */
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.flip-card-front {
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front img {
+  width: 30px; /* Уменьшили размер иконки */
+  height: 30px; /* Уменьшили размер иконки */
+  margin-bottom: 10px;
+}
+
+.flip-card-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Уменьшили отступы */
+  box-sizing: border-box;
+}
+
+.projectsButton {
+  background-color: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.projectsButton:hover {
+  background-color: #00b359;
+}
+
+/* Стили для контактной страницы */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.contact-form h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.form-group img {
+  width: 24px;
+  height: 24px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: black;
+}
+
+.contact-button {
+  background-color: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #00b359;
+}
+
+.contact-image {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
+}
+
+/* Стили для My Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.skill-card:hover {
+  background-color: #555;
+}
+
+.skill-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.trans-tools {
+  color: #ccc;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0;
+  }
+
+  .card {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .leftPanel, .rightPanel {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .icon-links {
+    right: 10px; /* Смещаем иконки */
+  }
+}
+
+@media (max-width: 480px) {
+  .leftPanel img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon-links {
+    right: 5px; /* Ещё больше смещаем иконки */
+    gap: 10px;
+  }
+
+  .icon-links img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .projectsButton, .downloadButton {
+    width: 100%;
+  }
+
+  .rightPanel h1 {
+    font-size: 1.5rem;
+  }
+}

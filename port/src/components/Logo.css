@@ -1,0 +1,16 @@
+/* Logo.css */
+
+.logo-container {
+    display: flex;
+    justify-content: flex-end; /* Перемещаем логотип направо */
+    align-items: center;
+    padding: 20px;
+    margin-left: 150px;
+
+  }
+  
+  .logo {
+    width: 75px;
+  }
+  
+  
